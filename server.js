@@ -61,10 +61,11 @@ app.use('/api', userRoutes);
 
     const root = require('path').join(__dirname, 'client', 'build')
     app.use(express.static(root));
+    console.log(root);
     app.get("*", (req, res) => {
     res.sendFile('index.html', { root });
 })
-  }
+  
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
