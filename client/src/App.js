@@ -18,6 +18,7 @@ import PrivateRoute from './auth/PrivateRoute';
 import AdminRoute from './auth/AdminRoute';
 import Forgot from './auth/Forgot';
 import Reset from './auth/Reset';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/internshp" component={Internship}></Route>
           <Route path="/student-init" component={StudentInit}></Route>
           <Route path="/society-init" component={SocietyInit}></Route>
+          <Route path="/contact" component={Contact}></Route>
 
           <Route path="/signup" exact component={Signup} />
           <Route path="/signin" exact component={Signin} />

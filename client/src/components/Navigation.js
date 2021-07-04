@@ -39,7 +39,7 @@ const Navigation = ({ children, history }) => {
 													<li><a href="/society-init">Initiative for Society</a></li>
 												</ul>
 											</li>
-											<li><Link to="/contact">Contact</Link></li>
+											<li><a href ="/contact">Contact</a></li>
 											{!isAuth() && (
 												<Fragment>
 													<li className="nav-item">

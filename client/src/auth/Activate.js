@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-const Activate = ({ match }) => {
+const Activate = ({ match, history }) => {
     const [values, setValues] = useState({
         name: '',
         token: '',
@@ -34,6 +34,8 @@ const Activate = ({ match }) => {
                 console.log('ACCOUNT ACTIVATION', response);
                 setValues({ ...values, show: false });
                 toast.success(response.data.message);
+                history.push('/signin')
+
             })
             .catch(error => {
                 console.log('ACCOUNT ACTIVATION ERROR', error.response.data.error);

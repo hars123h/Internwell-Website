@@ -32,6 +32,7 @@ app.use(bodyParser.json());
 // if ((process.env.NODE_ENV = 'development')) {
 //     app.use(cors({ origin: `http://localhost:3000` }));
 //   }
+ 
 
 
 
@@ -59,12 +60,19 @@ app.use('/api', userRoutes);
 //     //   res.sendFile(path.resolve(__dirname, 'client/build', 'index.html'));
 //     // });
 
+
+
+
+if (process.env.NODE_ENV === 'production') {
     const root = require('path').join(__dirname, 'client', 'build')
     app.use(express.static(root));
     console.log(root);
     app.get("*", (req, res) => {
     res.sendFile('index.html', { root });
 })
+} else {
+    app.use(cors({ origin: `http://localhost:3000` }));
+}
   
 
 const port = process.env.PORT || 8000;
